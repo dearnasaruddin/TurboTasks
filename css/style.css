@@ -90,7 +90,7 @@ ul {
 }
 
 .taskMainLeft ul li span i {
-    font-style: 26px;
+    font-size: 26px;
     color: #bbbbbb;
     cursor: pointer;
 
@@ -203,7 +203,7 @@ ul {
 }
 
 .taskBox ul li span i {
-    font-style: 26px;
+    font-size: 26px;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
