@@ -39,7 +39,7 @@ function displayFunc() {
     })
 
     trashList.map((item, index) => {
-        trashItems.innerHTML += `<li>${index + 1}. ${item} <span> <i class="fa-solid fa-rotate-right undoBtn"></i> <i class="fa-solid fa-trash delBtn"></i></span></li>`
+        trashItems.innerHTML += `<li>${index + 1}. ${item.task} <span> <i class="fa-solid fa-rotate-right undoBtn"></i> <i class="fa-solid fa-trash delBtn"></i></span></li>`
     })
 
 
@@ -63,7 +63,7 @@ function displayFunc() {
 
     moveTrashBtnArr.map((item, index) => {
         item.addEventListener("click", () => {
-            trashList.push(taskList[index])
+            trashList.push({task: taskList[index], indexNum: index})
             taskList.splice(index, 1)
             displayFunc()
         })
@@ -88,7 +88,7 @@ function displayFunc() {
 
     undoBtnArr.map((item, index) => {
         item.addEventListener("click", () => {
-            taskList.push(trashList[index])
+            taskList.splice(trashList[index].indexNum, 0, trashList[index].task)
             trashList.splice(index, 1)
             displayFunc()
         })
